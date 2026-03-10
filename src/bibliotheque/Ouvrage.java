@@ -1,9 +1,11 @@
 package bibliotheque;
 
+import java.util.Arrays;
+
 public class Ouvrage {
 
 	// constantes
-	private static int NB_MAX_EXEMPLAIRES = 50;
+	private static int NB_MAX_EXEMPLAIRES = 3;
 
 	private String titre;
 	private String auteurs;
@@ -21,6 +23,21 @@ public class Ouvrage {
 		this.editeur = editeur;
 		this.annee = annee;
 		this.isbn = isbn;
+	}
+
+	@Override
+	public String toString() {
+		return "Ouvrage [titre=" + titre + ", isbn=" + isbn + ", exemplaires=" + Arrays.toString(exemplaires) + "]";
+	}
+
+	public boolean ajouteExemplaire(Exemplaire ex) {
+		if (nbExemplaires < NB_MAX_EXEMPLAIRES) {
+			exemplaires[nbExemplaires] = ex;
+			nbExemplaires++;
+			return true;
+		}
+		System.out.println("OMG");
+		return false;
 	}
 
 }

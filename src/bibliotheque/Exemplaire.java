@@ -14,4 +14,9 @@ public class Exemplaire {
 		this.empruntable = empruntable;
 	}
 
+	@Override
+	public String toString() {
+		return cote;
+	}
+
 }
