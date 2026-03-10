@@ -14,4 +14,13 @@ public class Ouvrage {
 	// à savoir refaire
 	private Exemplaire[] exemplaires = new Exemplaire[NB_MAX_EXEMPLAIRES]; // déclaration + instanciation
 	private int nbExemplaires = 0;
+
+	public Ouvrage(String titre, String auteurs, String editeur, int annee, String isbn) {
+		this.titre = titre;
+		this.auteurs = auteurs;
+		this.editeur = editeur;
+		this.annee = annee;
+		this.isbn = isbn;
+	}
+
 }
