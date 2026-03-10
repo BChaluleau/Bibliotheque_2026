@@ -12,22 +12,24 @@ public class Ouvrage {
 	private String editeur;
 	private int annee;
 	private String isbn;
+	private Genre genre;
 
 	// à savoir refaire
 	private Exemplaire[] exemplaires = new Exemplaire[NB_MAX_EXEMPLAIRES]; // déclaration + instanciation
 	private int nbExemplaires = 0;
 
-	public Ouvrage(String titre, String auteurs, String editeur, int annee, String isbn) {
+	public Ouvrage(String titre, String auteurs, String editeur, int annee, String isbn, Genre genre) {
 		this.titre = titre;
 		this.auteurs = auteurs;
 		this.editeur = editeur;
 		this.annee = annee;
 		this.isbn = isbn;
+		this.genre = genre;
 	}
 
 	@Override
 	public String toString() {
-		return "Ouvrage [titre=" + titre + ", isbn=" + isbn + ", exemplaires=" + Arrays.toString(exemplaires) + "]";
+		return "Ouvrage [titre=" + titre + ", genre=" + genre + ", exemplaires=" + Arrays.toString(exemplaires) + "]";
 	}
 
 	private boolean ajouteExemplaire(Exemplaire ex) {

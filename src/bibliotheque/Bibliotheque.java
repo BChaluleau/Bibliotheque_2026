@@ -28,8 +28,8 @@ public class Bibliotheque {
 		}
 	}
 
-	public Ouvrage nouvelOuvrage(String titre, String auteurs, String editeur, int annee, String isbn) {
-		Ouvrage ouvrage = new Ouvrage(titre, auteurs, editeur, annee, isbn);
+	public Ouvrage nouvelOuvrage(String titre, String auteurs, String editeur, int annee, String isbn, Genre genre) {
+		Ouvrage ouvrage = new Ouvrage(titre, auteurs, editeur, annee, isbn, genre);
 		ajoute(ouvrage);
 		return ouvrage;
 	}
