@@ -30,7 +30,7 @@ public class Ouvrage {
 		return "Ouvrage [titre=" + titre + ", isbn=" + isbn + ", exemplaires=" + Arrays.toString(exemplaires) + "]";
 	}
 
-	public boolean ajouteExemplaire(Exemplaire ex) {
+	private boolean ajouteExemplaire(Exemplaire ex) {
 		if (nbExemplaires < NB_MAX_EXEMPLAIRES) {
 			exemplaires[nbExemplaires] = ex;
 			nbExemplaires++;
@@ -38,6 +38,12 @@ public class Ouvrage {
 		}
 		System.out.println("OMG");
 		return false;
+	}
+
+	public void ajouteExemplaire() {
+		Exemplaire ex = new Exemplaire("COTE_" + nbExemplaires);
+		ajouteExemplaire(ex);
+
 	}
 
 }

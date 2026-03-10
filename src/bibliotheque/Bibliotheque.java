@@ -19,13 +19,19 @@ public class Bibliotheque {
 		return "Bibliotheque [fond=" + Arrays.toString(fond) + ", nbOuvrages=" + nbOuvrages + "]";
 	}
 
-	public void ajoute(Ouvrage ouvrage) {
+	private void ajoute(Ouvrage ouvrage) {
 		if (nbOuvrages < nbMaxOuvrages) {
 			fond[nbOuvrages] = ouvrage;
 			nbOuvrages++;
 		} else {
 			System.out.println("La bibliothèque est pleine");
 		}
+	}
+
+	public Ouvrage nouvelOuvrage(String titre, String auteurs, String editeur, int annee, String isbn) {
+		Ouvrage ouvrage = new Ouvrage(titre, auteurs, editeur, annee, isbn);
+		ajoute(ouvrage);
+		return ouvrage;
 	}
 
 }
